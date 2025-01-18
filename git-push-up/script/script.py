@@ -16,10 +16,12 @@ cap = cv2.VideoCapture(0)
 TARGET = 5
 
 def main():
-    if len(sys.argv) <= 1:
-        print("No argument provided")
+    global TARGET
+    if len(sys.argv) <= 2:
+        print("Insufficient argument provided")
         return
     random_string = sys.argv[1]
+    TARGET = int(sys.argv[2])
     pushup_counter(random_string)
 
 def pushup_counter(random_string: str):

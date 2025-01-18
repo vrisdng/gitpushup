@@ -14,6 +14,14 @@
   "contributes": {
     "commands": [
       {
+        "command": "git-push-up.change-target",
+        "title": "Change Push Up Target",
+        "icon": {
+          "light": "./assets/pushup.png",
+          "dark": "./assets/pushup.png"
+        }
+      },
+      {
         "command": "git-push-up.gitpush",
         "title": "Git Push Up 🏋️‍♀️",
         "icon": {
