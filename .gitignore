@@ -5,7 +5,7 @@
 
 # Misc
 dist/
-git-push-up/script/.venv/gitpushup/Lib/site-packages/jaxlib/xla_extension.pyd
+.venv/
 
 # User-specific files
 *.rsuser
