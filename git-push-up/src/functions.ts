@@ -50,4 +50,7 @@ export const gitPushUp = async () => {
 };
 
 const pushToOrigin = async () => {
+    const terminal = vscode.window.createTerminal('git-push-up');
+    terminal.show();
+    terminal.sendText('git push origin', true);
 };
