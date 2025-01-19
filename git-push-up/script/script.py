@@ -10,8 +10,14 @@ md_drawing = md.solutions.drawing_utils
 md_pose = md.solutions.pose
 
 # position=None
-
-cap = cv2.VideoCapture(0)
+camera_indices = [0, 1]
+for idx in camera_indices:
+    cap = cv2.VideoCapture(idx)
+    if cap.isOpened():
+        print(f"Index {idx}")
+        break
+    else:
+        continue 
 
 TARGET = 5
 
@@ -61,8 +67,8 @@ def pushup_counter(random_string: str):
                 angle_right = imlist[13][2] - imlist[11][2]
 
                 # Map angles to percentage values
-                percentage_right = int(np.interp(angle_right, (80, 160), (100, 0)))
-                percentage_left = int(np.interp(angle_left, (80, 160), (100, 0)))
+                percentage_right = int(np.interp(angle_right, (85, 165), (100, 0)))
+                percentage_left = int(np.interp(angle_left, (85, 165), (100, 0)))
 
                 bar_height = int(0.5 * frame_height)  # Dynamic bar height
                 bar_top = int(0.1 * frame_height)    # Bar top position

@@ -10,10 +10,22 @@ export const gitPushUp = async () => {
         `Current push-up target is ${PUSH_UP_TARGET}.`
         + " If you want to change your push-up target, use command 'Change Push Up Target'."
     )
-    const envPath = '"' + path.join(__dirname, '..', 'script/.venv/gitpushup/Scripts/activate') + '"';
+    
+    const isWindows = process.platform === 'win32';
+    
+    const isMacLinux = !isWindows;
+
+    const envPath = isMacLinux
+        ? '"' + path.join(__dirname, '..', 'script/.venv/gitpushup/bin/activate') + '"'
+        : '"' + path.join(__dirname, '..', 'script/.venv/gitpushup/Scripts/activate') + '"'; 
+
     const pythonPath = '"' + path.join(__dirname, '..', 'script/script.py') + '"';
+    const pythonCommand = isMacLinux ? 'python3' : 'python'; 
     const randomString = crypto.randomUUID();
-    const command = `${envPath} && python ${pythonPath} ${randomString} ${PUSH_UP_TARGET}`;
+    const command = isMacLinux
+        ? `source ${envPath} && ${pythonCommand} ${pythonPath} ${randomString} ${PUSH_UP_TARGET}`
+        : `${envPath} && ${pythonCommand} ${pythonPath} ${randomString} ${PUSH_UP_TARGET}`;
+
     console.log(command);
     let i = 0;
     const ls = spawn(command, {
@@ -61,7 +73,7 @@ const pushToOrigin = async () => {
 
 export const setPushUpTarget = async (isInitial: boolean) => {
     const input = await vscode.window.showInputBox({
-        prompt: 'Change your push-up target (1 to 100):',
+        prompt: 'Change your push-up target [1-100]:',
         validateInput: (value) => {
             const num = Number(value);
             if (isNaN(num) || num < 1 || num > 100) {
