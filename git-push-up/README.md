@@ -1,12 +1,10 @@
 # git-push-up README
 
-This is the README for your extension "git-push-up". After writing up a brief description, we recommend including the following sections.
+Git Push Up
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
+A VSCode extension that forces you to do push-ups before you git push. 
 
 \!\[feature X\]\(images/feature-x.png\)
 
@@ -14,26 +12,21 @@ For example if there is an image subfolder under your extension project workspac
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Try to put your camera on the floor and your face at the front for best experience.
+Watch this video for demo: https://www.youtube.com/watch?v=h10xX6XA8Co 
 
 ## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
 
 * `myExtension.enable`: Enable/disable this extension.
 * `myExtension.thing`: Set to `blah` to do something.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Feedback here: https://www.youtube.com/watch?v=h10xX6XA8Co
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+Thank you for using our app <3 You made our dream come true. 
 
 ### 1.0.0
 
