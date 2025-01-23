@@ -15,9 +15,7 @@ export const gitPushUp = async () => {
     
     const isMacLinux = !isWindows;
 
-    const envPath = isMacLinux
-        ? '"' + path.join(__dirname, '..', 'script/.venv/gitpushup/bin/activate') + '"'
-        : '"' + path.join(__dirname, '..', 'script/.venv/gitpushup/Scripts/activate') + '"'; 
+    const envPath = '"' + path.join(__dirname, '..', 'script/.venv/gitpushup/Scripts/activate') + '"';
 
     const pythonPath = '"' + path.join(__dirname, '..', 'script/script.py') + '"';
     const pythonCommand = isMacLinux ? 'python3' : 'python'; 
@@ -36,13 +34,13 @@ export const gitPushUp = async () => {
         for (const line of String(data).split('\n')) {
             const parts = line.trim().split(' ');
             if (parts.length !== 2) {
-                return;
+                continue;
             }
             if (parts[0] !== randomString) {
-                return;
+                continue;
             }
             if (Number(parts[1]) !== i) {
-                return;
+                continue;
             }
             i++;
             console.log("i", i);

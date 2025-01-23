@@ -4,6 +4,7 @@
   "description": "Push up before Git Push",
   "publisher": "git-push-up",
   "version": "0.0.1",
+  "repository": "https://github.com/vrisdng/gitpushup",
   "engines": {
     "vscode": "^1.96.0"
   },

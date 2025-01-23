@@ -110,7 +110,7 @@ def pushup_counter(random_string: str):
                 
                 # Interact with extension
                 if int(count) > last_count:
-                    print(f"{random_string} {last_count}")
+                    print(f"{random_string} {last_count}", flush=True)
                     last_count += 1
 
                 # Display push-up count
